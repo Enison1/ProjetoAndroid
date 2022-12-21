@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,12 @@ public class MainActivity3 extends AppCompatActivity{
 
         rg1.setOnCheckedChangeListener(meuOuvinte);
 
+        Intent intent2 = getIntent();
+        String textoTela1 = String.valueOf(intent2.getSerializableExtra("string1"));
+
+        tv1.setText(textoTela1);
+
+
     }
 
     RadioGroup.OnCheckedChangeListener meuOuvinte = new RadioGroup.OnCheckedChangeListener() {
@@ -51,6 +58,9 @@ public class MainActivity3 extends AppCompatActivity{
                         break;
                 }
                 tv1.setText("Resultado: " + String.format("%.2f", res));
+
+
+
             }
         }
     };
